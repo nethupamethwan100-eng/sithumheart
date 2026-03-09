@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Love Animation</title>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #f9f9f9;
+            overflow: hidden;
+            position: relative;
+        }
+        .heart {
+            width: 200px;
+            height: 200px;
+            background-color: red;
+            position: relative;
+            animation: rotate 5s infinite linear;
+        }
+        .heart:before,
+        .heart:after {
+            content: '';
+            position: absolute;
+            width: 200px;
+            height: 200px;
+            border-radius: 100px;
+            background-color: red;
+        }
+        .heart:before {
+            top: -100px;
+            left: 0;
+        }
+        .heart:after {
+            left: 100px;
+            top: 0;
+        }
+        @keyframes rotate {
+            from { transform: rotate(0deg); }
+            to { transform: rotate(360deg); }
+        }
+        .orbiting-text {
+            position: absolute;
+            width: 100%;
+            text-align: center;
+            font-size: 30px;
+            color: #ff69b4;
+            animation: orbit 10s infinite linear;
+        }
+        @keyframes orbit {
+            from { transform: rotate(0deg) translateX(400px) rotate(0deg); }
+            to { transform: rotate(360deg) translateX(400px) rotate(-360deg); }
+        }
+    </style>
+</head>
+<body>
+    <div class="heart"></div>
+    <div class="orbiting-text">I ALWAYS CHOOSE YOU</div>
+</body>
+</html>
